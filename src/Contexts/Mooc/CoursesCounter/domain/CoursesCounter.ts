@@ -1,5 +1,5 @@
 import { AggregateRoot } from '../../../Shared/domain/AggregateRoot';
-import { CourseId } from '../../Shared/domain/Courses/CourseId';
+import { CourseId } from '../../../Shared/domain/Courses/CourseId';
 import { CoursesCounterTotal } from './CoursesCounterTotal';
 import { CoursesCounterId } from './CoursesCounterId';
 import { CoursesCounterIncrementedDomainEvent } from './CoursesCounterIncrementedDomainEvent';

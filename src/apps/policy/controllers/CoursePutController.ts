@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { BaseController } from './BaseController';
-import { CourseAlreadyExists } from '../../../../Contexts/Mooc/Courses/domain/CourseAlreadyExists';
+import { CourseAlreadyExists } from '../../../modules/policy/domain/';
 import { CreateCourseCommand } from '../../../../Contexts/Mooc/Courses/application/CreateCourseCommand';
 import { CommandBus } from '../../../../shared/domain';
 

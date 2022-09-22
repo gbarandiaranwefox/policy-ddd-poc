@@ -1,4 +1,4 @@
-import { Controller } from './Controller';
+import { Controller } from './BaseController';
 import { Request, Response } from 'express';
 import httpStatus = require('http-status');
 import { CoursesCounterNotExist } from '../../../../Contexts/Mooc/CoursesCounter/domain/CoursesCounterNotExist';

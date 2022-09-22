@@ -1,5 +1,5 @@
 import { EventBus } from '../../../Shared/domain/EventBus';
-import { CourseId } from '../../Shared/domain/Courses/CourseId';
+import { CourseId } from '../../../Shared/domain/Courses/CourseId';
 import { Course } from '../domain/Course';
 import { CourseDuration } from '../domain/CourseDuration';
 import { CourseName } from '../domain/CourseName';
