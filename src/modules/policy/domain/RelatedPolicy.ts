@@ -1,6 +1,5 @@
-import { PolicyNumber } from "./PolicyNumber";
-import { PolicyType, RelatedPolicyType } from "./RelatedPolicyType";
-
+import { PolicyNumber } from './PolicyNumber';
+import { PolicyType, RelatedPolicyType } from './RelatedPolicyType';
 
 export class RelatedPolicy {
     readonly id: PolicyNumber;
@@ -15,10 +14,10 @@ export class RelatedPolicy {
         return {
             id: this.id.toString(),
             type: this.type.value
-        }
+        };
     }
 
-    static fromPrimitives(data: { id, type }) {
+    static fromPrimitives(data: { id: string, type: string }) {
         return new RelatedPolicy(
             new PolicyNumber(data.id),
             new RelatedPolicyType(data.type as PolicyType)

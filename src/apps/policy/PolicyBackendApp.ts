@@ -1,7 +1,7 @@
-import { Definition } from 'node-dependency-injection';
-import { DomainEvent, DomainEventSubscriber, EventBus } from '../../shared/domain';
-import { DomainEventMapping } from '../../shared/infra/EventBus';
-import container from './dependency-injection';
+// import { Definition } from 'node-dependency-injection';
+// import { DomainEvent, DomainEventSubscriber, EventBus } from '../../shared/domain';
+// import { DomainEventMapping } from '../../shared/infra/EventBus';
+// import container from './dependency-injection';
 import { Server } from './server';
 
 export class PolicyBackendApp {
@@ -10,7 +10,7 @@ export class PolicyBackendApp {
   async start() {
     const port = process.env.PORT || '3000';
     this.server = new Server(port);
-    await this.registerSubscribers();
+    // await this.registerSubscribers();
     return this.server.listen();
   }
 
@@ -22,6 +22,7 @@ export class PolicyBackendApp {
     return this.server?.getHTTPServer();
   }
 
+  /*
   private async registerSubscribers() {
     const eventBus = container.get('Shared.EventBus') as EventBus;
     const subscriberDefinitions = container.findTaggedServiceIds('domainEventSubscriber') as Map<String, Definition>;
@@ -34,4 +35,5 @@ export class PolicyBackendApp {
     eventBus.addSubscribers(subscribers);
     await eventBus.start();
   }
+   */
 }

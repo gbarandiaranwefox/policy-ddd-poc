@@ -1,4 +1,8 @@
 services:
   Modules.Policy.PolicyRepository:
     class: ../../../../modules/policy/infra/MongoPolicyRepository
-    arguments: []
+    arguments: ["@Shared.ConnectionManager"]
+
+  Modules.Policy.PoliciesFinder:
+    class: ../../../../modules/policy/useCases/PoliciesFinder
+    arguments: ["@Modules.Policy.PolicyRepository"]

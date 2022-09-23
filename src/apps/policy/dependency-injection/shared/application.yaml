@@ -1,0 +1,15 @@
+services:
+  shared.MongoConfig:
+    factory:
+      class: ../../../../modules/policy/shared/persistence/mongo/MongoConfigFactory
+      method: 'createConfig'
+
+  Shared.Logger:
+    class: ../../../../shared/infra/WinstonLogger
+    arguments: []
+
+  Shared.ConnectionManager:
+    factory:
+      class: ../../../../shared/infra/persistence/ConnectionManager
+      method: 'createClient'
+    arguments: [ 'policy', '@shared.MongoConfig' ]
