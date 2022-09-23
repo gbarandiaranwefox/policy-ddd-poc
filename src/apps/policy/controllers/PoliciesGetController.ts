@@ -8,6 +8,6 @@ export class PoliciesGetController implements BaseController {
 
   async run(req: Request, res: Response) {
     const policies = await this.finder.run();
-    res.status(httpStatus.OK).send(policies.map(policy => policy.toPrimitives(policy)));
+    res.status(httpStatus.OK).send(policies.map(policy => policy.toPrimitives()));
   }
 }

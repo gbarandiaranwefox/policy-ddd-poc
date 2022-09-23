@@ -1,3 +1,4 @@
 services:
-  Apps.policy.controllers.PolicyGetController:
-    class: ../../controllers/PolicyGetController
+  Apps.policy.controllers.PoliciesGetController:
+    class: ../../controllers/PoliciesGetController
+    arguments: ["@Modules.Policy.PolicyRepository"]

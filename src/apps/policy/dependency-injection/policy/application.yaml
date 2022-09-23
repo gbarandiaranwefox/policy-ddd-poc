@@ -1,0 +1,4 @@
+services:
+  Modules.Policy.PolicyRepository:
+    class: ../../../../modules/policy/infra/MongoPolicyRepository
+    arguments: []
