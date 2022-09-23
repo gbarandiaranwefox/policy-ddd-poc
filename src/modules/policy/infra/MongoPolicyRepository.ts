@@ -9,9 +9,11 @@ export class MongoPolicyRepository extends MongoRepository<Policy> implements Po
 
   async searchAll(): Promise<Policy[]> {
     const collection = await this.collection();
-    const policies: any = await collection.find();
+    const policies: any = await collection.find().toArray();
 
-    return policies.map((policy: any) => Policy.fromPrimitives({ ...policy, id: policy._id }));
+    return policies.map((policy: any) => Policy.fromPrimitives({ id: policy._id as string, policyNumber: policy.PolicyNumber as string, 
+    relatedPolicies: policy.RelatedPolicies.map((x: any) => ({id: x.Id as string, type: x.Type as string}))
+    }));
   }
 
   protected moduleName(): string {

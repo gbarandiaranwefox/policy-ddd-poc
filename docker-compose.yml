@@ -30,7 +30,7 @@ services:
       - 3001:3000
 
   mongo:
-    image: mongo
+    image: mongo:latest
     volumes:
       - ./data/mongo:/data/db:delegated
     ports:

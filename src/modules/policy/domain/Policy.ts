@@ -33,7 +33,7 @@ export class Policy extends AggregateRoot {
     return new Policy(
       new PolicyId(plainData.id),
       new PolicyNumber(plainData.policyNumber),
-      plainData.relatedPolicies.map((x: any) => new RelatedPolicy(x.id, x.type))
+      plainData.relatedPolicies.map((x: any) => RelatedPolicy.fromPrimitives({id: x.id as string, type: x.type as string}))
     );
   }
 }
