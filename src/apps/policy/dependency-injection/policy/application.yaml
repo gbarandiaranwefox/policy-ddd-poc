@@ -1,3 +1,0 @@
-services:
-  Policy.PolicyRepository:
-    class: ../../../../../modules/policy/PolicyRepository

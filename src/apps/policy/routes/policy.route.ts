@@ -3,6 +3,6 @@ import container from '../dependency-injection';
 import { PoliciesGetController } from '../controllers/PoliciesGetController';
 
 export const register = (router: Router) => {
-  const policiesGetController: PoliciesGetController = container.get('Apps.policy.controllers.PolicyController');
+  const policiesGetController: PoliciesGetController = container.get('Apps.policy.controllers.PoliciesGetController');
   router.get('/policies', (req: Request, res: Response) => policiesGetController.run(req, res));
 };

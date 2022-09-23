@@ -1,5 +1,3 @@
-import { Nullable } from '../../../../Shared/domain/Nullable';
-import { MongoRepository } from '../../../../Shared/infrastructure/persistence/mongo/MongoRepository';
 import { CourseId } from '../../../../Shared/domain/Courses/CourseId';
 import { Course } from '../../domain/Course';
 import { CourseRepository } from '../../domain/CourseRepository';

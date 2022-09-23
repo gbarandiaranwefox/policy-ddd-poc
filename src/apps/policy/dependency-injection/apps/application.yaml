@@ -1,0 +1,3 @@
+services:
+  Apps.policy.controllers.PolicyGetController:
+    class: ../../controllers/PolicyGetController
