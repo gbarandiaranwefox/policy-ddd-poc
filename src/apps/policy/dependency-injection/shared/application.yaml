@@ -10,6 +10,6 @@ services:
 
   Shared.ConnectionManager:
     factory:
-      class: ../../../../shared/infra/persistence/ConnectionManager
+      class: ../../../../shared/infra/persistence/mongo/MongoClientFactory
       method: 'createClient'
     arguments: [ 'policy', '@shared.MongoConfig' ]
