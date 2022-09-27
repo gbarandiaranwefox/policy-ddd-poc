@@ -13,11 +13,23 @@ class WinstonLogger implements Logger {
   constructor() {
     this.logger = winston.createLogger({
       format: winston.format.combine(
-        winston.format.prettyPrint(),
+        winston.format.timestamp(),
+        winston.format(info => {
+          const { level, timestamp, message, requestId, ...rest } = info;
+          return {
+            level,
+            timestamp,
+            message,
+            requestId,
+            ...rest,
+          };
+        })(),
+        winston.format.json({ deterministic: false }),
+        // winston.format.prettyPrint(),
         winston.format.errors({ stack: true }),
         winston.format.splat(),
         winston.format.colorize(),
-        winston.format.simple()
+        // winston.format.simple()
       ),
       transports: [
         new winston.transports.Console(),
