@@ -2,3 +2,7 @@ services:
   Apps.policy.controllers.PoliciesGetController:
     class: ../../controllers/PoliciesGetController
     arguments: ["@Modules.Policy.PoliciesFinder"]
+
+  Apps.policy.controllers.PolicyPostController:
+    class: ../../controllers/PolicyPostController
+    arguments: []

@@ -13,7 +13,14 @@ const mooc_backend = [
   '--require tests/apps/mooc/backend/features/step_definitions/*.steps.ts'
 ].join(' ');
 
+const policy_backend = [
+  ...common,
+  'tests/apps/policy/*.feature',
+  '--require tests/apps/policy/step_definitions/*.steps.ts'
+].join(' ');
+
 module.exports = {
   backoffice_backend,
-  mooc_backend
+  mooc_backend,
+  policy_backend
 };

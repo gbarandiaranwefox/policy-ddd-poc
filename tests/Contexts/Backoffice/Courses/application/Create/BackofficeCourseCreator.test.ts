@@ -6,6 +6,7 @@ describe('BackofficeCourseCreator', () => {
   it('creates a backoffice course', async () => {
     const course = BackofficeCourseMother.random();
 
+
     const repository = new BackofficeCourseRepositoryMock();
     const applicationService = new BackofficeCourseCreator(repository);
 
