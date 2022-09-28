@@ -9,7 +9,6 @@ Feature: Search all policies
         """
         []
         """
-
     Scenario: There are two policies
         Given I have these two policies:
         """

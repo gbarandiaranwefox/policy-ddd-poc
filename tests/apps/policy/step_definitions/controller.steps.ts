@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { AfterAll, BeforeAll, Given, Then } from '@cucumber/cucumber';
+import { AfterAll, After, BeforeAll, Given, Then } from '@cucumber/cucumber';
 import request from 'supertest';
 import container from '../../../../src/apps/policy/dependency-injection';
 import { PolicyBackendApp } from '../../../../src/apps/policy/PolicyBackendApp';
@@ -40,9 +40,14 @@ BeforeAll(async () => {
     await application.start();
 });
 
-AfterAll(async () => {
+AfterAll(async() => {
     const environmentArranger: Promise<EnvironmentArranger> = container.get('Policy.EnvironmentArranger');
     await (await environmentArranger).arrange();
     await (await environmentArranger).close();
     await application.stop();
+});
+
+After({tags: '@clean'}, async () => {
+    const environmentArranger: Promise<EnvironmentArranger> = container.get('Policy.EnvironmentArranger');
+    await (await environmentArranger).arrange();
 });

@@ -1,7 +1,7 @@
 Feature: Create a new policy
     As a user
     I want to create a new policy
-
+    @clean
     Scenario: A valid unexisting policy
         Given I send a POST request to "/policies" with body:
         """
