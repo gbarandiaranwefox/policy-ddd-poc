@@ -1,9 +1,9 @@
 {
-  "name": "typescript-ddd-skeleton",
+  "name": "policy-ddd-poc",
   "version": "1.0.0",
   "description": "",
   "repository": {
-    "url": "https://github.com/CodelyTV/typescript-ddd-skeleton"
+    "url": "https://github.com/gbarandiaranwefox/policy-ddd-poc"
   },
   "license": "",
   "engines": {
@@ -14,7 +14,7 @@
     "dev:policy": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules ./src/apps/policy/start.ts",
     "test": "npm run test:unit && npm run test:features",
     "test:unit": "NODE_ENV=test jest",
-    "test:features": "npm run test:mooc:backend:features && npm run test:backoffice:backend:features",
+    "test:features": "npm run test:policy:features",
     "test:policy:features": "NODE_ENV=test cucumber-js -p policy_backend",
     "lint": "tslint src/**/*.ts{,x}",
     "build": "npm run build:clean && npm run build:tsc && npm run build:di",
