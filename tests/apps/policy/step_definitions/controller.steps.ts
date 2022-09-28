@@ -1,7 +1,9 @@
 import assert from 'assert';
 import { AfterAll, BeforeAll, Given, Then } from 'cucumber';
 import request from 'supertest';
+import container from '../../../../src/apps/policy/dependency-injection';
 import { PolicyBackendApp } from '../../../../src/apps/policy/PolicyBackendApp';
+import { EnvironmentArranger } from '../../../Contexts/Shared/infrastructure/arranger/EnvironmentArranger';
 
 
 let _request: request.Test;
@@ -18,14 +20,19 @@ Then('the response status code should be {int}', async (status: number) => {
 });
 
 Then('the response should be empty', () => {
-    assert.deepEqual(_response.body, {});
+    assert.deepStrictEqual(_response.body, {});
 });
 
 BeforeAll(async () => {
+    const environmentArranger: Promise<EnvironmentArranger> = container.get('Policy.EnvironmentArranger');
+    await (await environmentArranger).arrange();
     application = new PolicyBackendApp();
     await application.start();
 });
   
 AfterAll(async () => {
+    const environmentArranger: Promise<EnvironmentArranger> = container.get('Policy.EnvironmentArranger');
+    await (await environmentArranger).arrange();
+    await (await environmentArranger).close();
     await application.stop();
  });

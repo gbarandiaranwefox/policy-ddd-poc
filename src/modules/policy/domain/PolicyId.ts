@@ -1,3 +1,3 @@
-import { Uuid } from '../../../shared/domain';
+import { Uuid } from "../../../shared/domain/value-object/Uuid";
 
 export class PolicyId extends Uuid {}

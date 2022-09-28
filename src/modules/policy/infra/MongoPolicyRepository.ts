@@ -4,7 +4,7 @@ import { Policy } from '../domain/Policy';
 
 export class MongoPolicyRepository extends MongoRepository<Policy> implements PolicyRepository {
   save(policy: Policy): Promise<void> {
-    throw Error('not implemented');
+    return this.persist(policy.id.value, policy);
   }
 
   async searchAll(): Promise<Policy[]> {

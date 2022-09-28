@@ -6,7 +6,6 @@ Feature: Create a new policy
         Given I send a POST request to "/policies" with body:
         """
         {
-            "PolicyId": "1234",
             "PolicyNumber": "abcde",
             "RelatedPolicies": [
                 {

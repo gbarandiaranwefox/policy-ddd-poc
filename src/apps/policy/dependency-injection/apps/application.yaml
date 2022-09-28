@@ -5,4 +5,4 @@ services:
 
   Apps.policy.controllers.PolicyPostController:
     class: ../../controllers/PolicyPostController
-    arguments: []
+    arguments: ["@Modules.Policy.PolicyCreator"]
