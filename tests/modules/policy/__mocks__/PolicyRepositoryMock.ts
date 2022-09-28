@@ -4,9 +4,18 @@ import { Policy } from '../../../../src/modules/policy/domain/Policy';
 export class PolicyRepositoryMock implements PolicyRepository {
   private mockSave = jest.fn();
   private mockSearch = jest.fn();
+  private policies: Array<Policy> = [];
 
   async save(policy: Policy): Promise<void> {
     return this.mockSave(policy);
+  }
+  
+  returnOnSearch(policies: Array<Policy>) {
+    this.policies = policies;
+  }
+
+  assertSearch() {
+    expect(this.mockSearch).toHaveBeenCalled();
   }
 
   assertLastSavedPolicyIs(expected: Policy): void {
@@ -17,6 +26,7 @@ export class PolicyRepositoryMock implements PolicyRepository {
   }
 
   async searchAll(): Promise<Array<Policy>> {
-    return this.mockSearch();
+    this.mockSearch();
+    return this.policies;
   }
 }
