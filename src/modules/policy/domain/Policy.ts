@@ -24,8 +24,8 @@ export class Policy extends AggregateRoot {
 
   toPrimitives() {
     return {
-      id: this.id,
-      policyNumber: this.policyNumber,
+      id: this.id.value,
+      policyNumber: this.policyNumber.value,
       relatedPolicies: this.relatedPolicies.map(relatedPolicy => relatedPolicy.toPrimitives())
     };
   }
@@ -34,15 +34,13 @@ export class Policy extends AggregateRoot {
     return new Policy(
       new PolicyId(plainData.id),
       new PolicyNumber(plainData.policyNumber),
-      plainData.relatedPolicies.map((x: any) => RelatedPolicy.fromPrimitives({id: x.id as string, type: x.type as string}))
+      plainData.relatedPolicies.map((x: any) =>
+        RelatedPolicy.fromPrimitives({ id: x.id as string, type: x.type as string })
+      )
     );
   }
 
   static fromDTO(policyDTO: PolicyDTO): Policy {
-    return new Policy(
-      PolicyId.random(),
-      policyDTO.policyNumber,
-      policyDTO.relatedPolicies
-    );
+    return new Policy(PolicyId.random(), policyDTO.policyNumber, policyDTO.relatedPolicies);
   }
 }
