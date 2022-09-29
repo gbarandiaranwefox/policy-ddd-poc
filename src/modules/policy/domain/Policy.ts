@@ -2,7 +2,6 @@ import { AggregateRoot } from '../../../Shared/domain/AggregateRoot';
 import { PolicyId } from './PolicyId';
 import { PolicyNumber } from './PolicyNumber';
 import { RelatedPolicy } from './RelatedPolicy';
-import { PolicyDTO } from '../dto/PolicyDTO';
 
 export class Policy extends AggregateRoot {
   readonly id: PolicyId;
@@ -40,7 +39,12 @@ export class Policy extends AggregateRoot {
     );
   }
 
-  static fromDTO(policyDTO: PolicyDTO): Policy {
-    return new Policy(PolicyId.random(), policyDTO.policyNumber, policyDTO.relatedPolicies);
+  static createWithoutId(plainData: { policyNumber: string; relatedPolicies: [] }): Policy {
+    return new Policy(
+      PolicyId.random(),
+      new PolicyNumber(plainData.policyNumber),
+      // tslint:disable-next-line:ter-max-len
+      plainData.relatedPolicies.map((x: any) => RelatedPolicy.fromPrimitives({id: x.id as string, type: x.type as string}))
+    );
   }
 }

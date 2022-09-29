@@ -1,10 +1,10 @@
 import { PolicyNumber } from '../../../../src/modules/policy/domain/PolicyNumber';
 import { RelatedPolicy } from '../../../../src/modules/policy/domain/RelatedPolicy';
-import { RelatedPolicyMother } from '../dto/RelatedPolicyMother';
-import { PolicyNumberMother } from '../dto/PolicyNumberMother';
 import { Policy } from '../../../../src/modules/policy/domain/Policy';
 import { PolicyId } from '../../../../src/modules/policy/domain/PolicyId';
 import { PolicyIdMother } from './PolicyIdMother';
+import { PolicyNumberMother } from "./PolicyNumberMother";
+import { RelatedPolicyMother } from "./RelatedPolicyMother";
 
 export class PolicyMother {
   static create(id: PolicyId, policyNumber: PolicyNumber, relatedPolicies: RelatedPolicy[]): Policy {
