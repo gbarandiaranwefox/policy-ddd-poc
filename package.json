@@ -1,9 +1,9 @@
 {
-  "name": "typescript-ddd-skeleton",
+  "name": "policy-ddd-poc",
   "version": "1.0.0",
   "description": "",
   "repository": {
-    "url": "https://github.com/CodelyTV/typescript-ddd-skeleton"
+    "url": "https://github.com/gbarandiaranwefox/policy-ddd-poc"
   },
   "license": "",
   "engines": {
@@ -11,28 +11,19 @@
     "npm": ">=6.7.0"
   },
   "scripts": {
-    "dev:mooc:backend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/apps/mooc/backend/start.ts",
-    "dev:backoffice:frontend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules ./src/apps/backoffice/frontend/start.ts",
     "dev:policy": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules ./src/apps/policy/start.ts",
     "test": "npm run test:unit && npm run test:features",
     "test:unit": "NODE_ENV=test jest",
-    "test:features": "npm run test:mooc:backend:features && npm run test:backoffice:backend:features",
-    "test:mooc:backend:features": "NODE_ENV=test cucumber-js -p mooc_backend",
-    "test:backoffice:backend:features": "NODE_ENV=test cucumber-js -p backoffice_backend",
+    "test:features": "npm run test:policy:features",
     "test:policy:features": "NODE_ENV=test cucumber-js -p policy_backend",
     "lint": "tslint src/**/*.ts{,x}",
-    "start:mooc:backend": "NODE_ENV=production node dist/src/apps/mooc/backend/start",
-    "start:backoffice:frontend": "NODE_ENV=production node dist/src/apps/backoffice/frontend/start",
-    "start:backoffice:backend": "NODE_ENV=production node dist/src/apps/backoffice/backend/start",
     "build": "npm run build:clean && npm run build:tsc && npm run build:di",
     "build:tsc": "tsc -p tsconfig.prod.json",
     "build:di": "copy 'src/**/*.{json,yaml,html,png}' dist/src",
-    "build:clean": "rm -r dist; exit 0",
-    "cypress:open": "NODE_ENV=end2end ts-node tests/utils/cypress/open",
-    "cypress:run": "NODE_ENV=end2end ts-node tests/utils/cypress/run",
-    "cypress:ci:start": "NODE_ENV=end2end ts-node tests/utils/cypress/startApps"
+    "build:clean": "rm -r dist; exit 0"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^8.6.0",
     "@elastic/elasticsearch": "^7.11.0",
     "@types/amqplib": "^0.5.17",
     "@types/bluebird": "^3.5.33",
@@ -73,7 +64,7 @@
     "typescript": "^4.2.3",
     "uuid": "^8.3.2",
     "uuid-validate": "0.0.3",
-    "winston": "^3.3.3"
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.72",

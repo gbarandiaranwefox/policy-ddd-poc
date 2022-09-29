@@ -17,22 +17,8 @@ services:
   app:
     <<: *default-app
 
-  mooc-backend:
-    <<: *default-app
-    command: bash -c "npm run build && npm run start:mooc:backend"
-    ports:
-      - 3000:3000
-
-  backoffice-backend:
-    <<: *default-app
-    command: bash -c "npm run build && npm run start:backoffice:backend"
-    ports:
-      - 3001:3000
-
   mongo:
     image: mongo:latest
-    volumes:
-      - ./data/mongo:/data/db:delegated
     ports:
       - 27017:27017
 

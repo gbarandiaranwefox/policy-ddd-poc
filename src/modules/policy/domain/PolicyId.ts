@@ -1,4 +1,3 @@
-import { StringValueObject } from "../../../Shared/domain/value-object/StringValueObject";
+import { Uuid } from "../../../shared/domain/value-object/Uuid";
 
-
-export class PolicyId extends StringValueObject {}
+export class PolicyId extends Uuid {}

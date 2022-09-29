@@ -6,3 +6,7 @@ services:
   Modules.Policy.PoliciesFinder:
     class: ../../../../modules/policy/useCases/PoliciesFinder
     arguments: ["@Modules.Policy.PolicyRepository"]
+
+  Modules.Policy.PolicyCreator:
+    class: ../../../../modules/policy/useCases/PolicyCreator
+    arguments: ["@Modules.Policy.PolicyRepository"]

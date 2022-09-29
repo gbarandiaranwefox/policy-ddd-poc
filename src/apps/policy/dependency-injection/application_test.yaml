@@ -1,2 +1,7 @@
 imports:
   - { resource: ./application.yaml }
+
+services:
+  Policy.EnvironmentArranger:
+    class: ../../../../tests/modules/shared/infra/mongo/MongoEnvironmentArranger
+    arguments: ['@Shared.ConnectionManager']
