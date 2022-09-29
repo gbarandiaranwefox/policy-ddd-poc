@@ -12,7 +12,10 @@ export class PolicyPostController implements BaseController {
     async run(req: Request, res: Response): Promise<void> {
         const policyNumber: string = req.body.PolicyNumber;
         const relatedPolicies: [] = req.body.RelatedPolicies;
-        const policyDto = PolicyDTO.fromPrimitives({policyNumber: policyNumber, relatedPolicies: relatedPolicies.map((x: any) => ({id: x.Id, type: x.Type})) as []});
+        const policyDto = PolicyDTO.fromPrimitives({
+          policyNumber: policyNumber,
+          relatedPolicies: relatedPolicies.map((x: any) => ({id: x.Id, type: x.Type})) as []}
+        );
         const policy = Policy.fromDTO(policyDto);
 
         await this.creator.run(policy);

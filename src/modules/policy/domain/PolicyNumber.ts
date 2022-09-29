@@ -1,4 +1,3 @@
-import { StringValueObject } from "../../../Shared/domain/value-object/StringValueObject";
-
+import { StringValueObject } from '../../../shared/domain/value-object';
 
 export class PolicyNumber extends StringValueObject {}
