@@ -1,7 +1,7 @@
 import { PoliciesFinder } from '../../../../src/modules/policy/useCases/PoliciesFinder';
 import { PolicyMother } from '../domain/PolicyMother';
 
-import { PolicyRepositoryMock } from "../__mocks__/PolicyRepositoryMock";
+import { PolicyRepositoryMock } from '../__mocks__/PolicyRepositoryMock';
 
 
 let repository: PolicyRepositoryMock;
