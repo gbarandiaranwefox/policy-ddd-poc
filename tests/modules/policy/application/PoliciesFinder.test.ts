@@ -1,4 +1,4 @@
-import { PoliciesFinder } from '../../../../src/modules/policy/useCases/PoliciesFinder';
+import { PoliciesFinder } from '../../../../src/modules/policy/application/PoliciesFinder';
 import { PolicyMother } from '../domain/PolicyMother';
 
 import { PolicyRepositoryMock } from '../__mocks__/PolicyRepositoryMock';

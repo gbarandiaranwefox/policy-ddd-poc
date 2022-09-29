@@ -6,7 +6,7 @@ import Router from 'express-promise-router';
 import helmet from 'helmet';
 import * as http from 'http';
 import httpStatus from 'http-status';
-import Logger from '../../shared/core/Logger';
+import Logger from '../../shared/domain/Logger';
 import container from './dependency-injection';
 import { registerRoutes } from './routes';
 

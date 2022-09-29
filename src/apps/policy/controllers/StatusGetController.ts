@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { BaseController } from './BaseController';
-import { httpRequestDurationMicroseconds } from '../../../shared/infra/helpers/metrics';
-import { Healthcheck } from '../../../shared/infra/helpers/healthcheck';
+import { httpRequestDurationMicroseconds } from '../../../shared/infrastructure/helpers/metrics';
+import { Healthcheck } from '../../../shared/infrastructure/helpers/healthcheck';
 
 export default class StatusGetController implements BaseController {
   async run(req: Request, res: Response) {

@@ -1,12 +1,12 @@
 services:
   Modules.Policy.PolicyRepository:
-    class: ../../../../modules/policy/infra/MongoPolicyRepository
+    class: ../../../../modules/policy/infrastructure/MongoPolicyRepository
     arguments: ["@Shared.ConnectionManager"]
 
   Modules.Policy.PoliciesFinder:
-    class: ../../../../modules/policy/useCases/PoliciesFinder
+    class: ../../../../modules/policy/application/PoliciesFinder
     arguments: ["@Modules.Policy.PolicyRepository"]
 
   Modules.Policy.PolicyCreator:
-    class: ../../../../modules/policy/useCases/PolicyCreator
+    class: ../../../../modules/policy/application/PolicyCreator
     arguments: ["@Modules.Policy.PolicyRepository"]

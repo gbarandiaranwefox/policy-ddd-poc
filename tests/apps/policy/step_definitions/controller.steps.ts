@@ -3,7 +3,7 @@ import { AfterAll, After, BeforeAll, Given, Then } from '@cucumber/cucumber';
 import request from 'supertest';
 import container from '../../../../src/apps/policy/dependency-injection';
 import { PolicyBackendApp } from '../../../../src/apps/policy/PolicyBackendApp';
-import {EnvironmentArranger } from '../../../modules/shared/infra/arranger/EnvironmentArranger';
+import {EnvironmentArranger } from '../../../modules/shared/infrastructure/arranger/EnvironmentArranger';
 
 let _request: request.Test;
 let _response: request.Response;

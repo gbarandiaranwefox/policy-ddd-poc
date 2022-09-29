@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { BaseController } from './BaseController';
-import { PoliciesFinder } from '../../../modules/policy/useCases/PoliciesFinder';
+import { PoliciesFinder } from '../../../modules/policy/application/PoliciesFinder';
 
 export class PoliciesGetController implements BaseController {
   constructor(private finder: PoliciesFinder) {}

@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { Policy } from '../../../modules/policy/domain/Policy';
 import { PolicyDTO } from '../../../modules/policy/dto/PolicyDTO';
-import { PolicyCreator } from '../../../modules/policy/useCases/PolicyCreator';
+import { PolicyCreator } from '../../../modules/policy/application/PolicyCreator';
 
 import { BaseController } from './BaseController';
 

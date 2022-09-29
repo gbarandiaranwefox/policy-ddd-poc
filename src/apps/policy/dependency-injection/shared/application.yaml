@@ -5,11 +5,11 @@ services:
       method: 'createConfig'
 
   Shared.Logger:
-    class: ../../../../shared/infra/WinstonLogger
+    class: ../../../../shared/infrastructure/WinstonLogger
     arguments: []
 
   Shared.ConnectionManager:
     factory:
-      class: ../../../../shared/infra/persistence/mongo/MongoClientFactory
+      class: ../../../../shared/infrastructure/persistence/mongo/MongoClientFactory
       method: 'createClient'
     arguments: [ 'policy', '@shared.MongoConfig' ]

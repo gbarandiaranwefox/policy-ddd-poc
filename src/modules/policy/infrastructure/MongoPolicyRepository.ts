@@ -1,4 +1,4 @@
-import { MongoRepository } from '../../../shared/infra/persistence/mongo/MongoRepository';
+import { MongoRepository } from '../../../shared/infrastructure/persistence/mongo/MongoRepository';
 import { PolicyRepository } from '../domain/PolicyRepository';
 import { Policy } from '../domain/Policy';
 

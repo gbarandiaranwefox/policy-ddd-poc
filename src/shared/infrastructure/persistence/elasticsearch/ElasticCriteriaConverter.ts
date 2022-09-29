@@ -1,8 +1,8 @@
 import bodybuilder, { Bodybuilder } from 'bodybuilder';
-import { Criteria } from '../../../../../shared/domain/criteria/Criteria';
-import { Filter } from '../../../../../shared/domain/criteria/Filter';
-import { Operator } from '../../../../../shared/domain/criteria/FilterOperator';
-import { Filters } from '../../../../../shared/domain/criteria/Filters';
+import { Criteria } from '../../../domain/criteria/Criteria';
+import { Filter } from '../../../domain/criteria/Filter';
+import { Operator } from '../../../domain/criteria/FilterOperator';
+import { Filters } from '../../../domain/criteria/Filters';
 
 export enum TypeQueryEnum {
   TERMS = 'terms',

@@ -3,7 +3,7 @@ import { ResponseError } from '@elastic/elasticsearch/lib/errors';
 import bodybuilder, { Bodybuilder } from 'bodybuilder';
 import httpStatus from 'http-status';
 import { AggregateRoot } from '../../../domain/AggregateRoot';
-import { Criteria } from '../../../../../shared/domain/criteria/Criteria';
+import { Criteria } from '../../../domain/criteria/Criteria';
 import ElasticConfig from './ElasticConfig';
 import { ElasticCriteriaConverter, TypeQueryEnum } from './ElasticCriteriaConverter';
 
