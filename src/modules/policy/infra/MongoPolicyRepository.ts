@@ -4,16 +4,20 @@ import { Policy } from '../domain/Policy';
 
 export class MongoPolicyRepository extends MongoRepository<Policy> implements PolicyRepository {
   save(policy: Policy): Promise<void> {
-    throw Error('not implemented');
+    return this.persist(policy.id.value, policy);
   }
 
   async searchAll(): Promise<Policy[]> {
     const collection = await this.collection();
     const policies: any = await collection.find().toArray();
 
-    return policies.map((policy: any) => Policy.fromPrimitives({ id: policy._id as string, policyNumber: policy.PolicyNumber as string, 
-    relatedPolicies: policy.RelatedPolicies.map((x: any) => ({id: x.Id as string, type: x.Type as string}))
-    }));
+    return policies.map((policy: any) =>
+      Policy.fromPrimitives({
+        id: policy._id as string,
+        policyNumber: policy.policyNumber as string,
+        relatedPolicies: policy.relatedPolicies
+      })
+    );
   }
 
   protected moduleName(): string {
