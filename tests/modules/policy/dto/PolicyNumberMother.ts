@@ -1,5 +1,5 @@
 import { PolicyNumber } from '../../../../src/modules/policy/domain/PolicyNumber';
-import { WordMother } from '../../../Contexts/Shared/domain/WordMother';
+import { WordMother } from '../../shared/domain/WordMother';
 
 export class PolicyNumberMother {
   static create(value: string): PolicyNumber {
