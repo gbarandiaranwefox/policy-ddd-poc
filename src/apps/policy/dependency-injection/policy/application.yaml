@@ -9,4 +9,4 @@ services:
 
   Modules.Policy.PolicyCreator:
     class: ../../../../modules/policy/application/PolicyCreator
-    arguments: ["@Modules.Policy.PolicyRepository"]
+    arguments: ["@Modules.Policy.PolicyRepository", "@Shared.EventBus"]

@@ -13,3 +13,7 @@ services:
       class: ../../../../shared/infrastructure/persistence/mongo/MongoClientFactory
       method: 'createClient'
     arguments: [ 'policy', '@shared.MongoConfig' ]
+
+  Shared.EventBus:
+    class: ../../../../shared/infrastructure/EventBus/InMemory/InMemoryAsyncEventBus
+    arguments: []

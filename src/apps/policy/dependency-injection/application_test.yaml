@@ -5,3 +5,7 @@ services:
   Policy.EnvironmentArranger:
     class: ../../../../tests/modules/shared/infrastructure/mongo/MongoEnvironmentArranger
     arguments: ['@Shared.ConnectionManager']
+
+  Shared.EventBus:
+    class: ../../../../src/shared/infrastructure/EventBus/InMemory/InMemoryAsyncEventBus
+    arguments: []
