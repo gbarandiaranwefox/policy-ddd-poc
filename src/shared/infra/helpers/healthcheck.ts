@@ -1,4 +1,6 @@
 import * as packageJSON from '../../../../package.json';
+import container from '../../../apps/policy/dependency-injection';
+import { PolicyRepository } from '../../../modules/policy/domain/PolicyRepository';
 
 class Healthcheck {
   public static readonly SERVICE_UP = 'UP';
@@ -28,12 +30,12 @@ class Healthcheck {
     const startTime = Date.now();
     let status = Healthcheck.SERVICE_DOWN;
     let responseTimeMs;
+    const repository: PolicyRepository = container.get('Modules.Policy.PolicyRepository');
 
     const databaseCheck: Promise<void> = new Promise(async resolve => {
       try {
-        // TODO:
-        // 1. perform query to DB
-        // 2. check results
+        await repository.searchAll();
+
         status = Healthcheck.SERVICE_UP;
 
         responseTimeMs = Date.now() - startTime;
