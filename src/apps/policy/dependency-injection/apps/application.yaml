@@ -6,3 +6,7 @@ services:
   Apps.policy.controllers.PolicyPostController:
     class: ../../controllers/PolicyPostController
     arguments: ["@Modules.Policy.PolicyCreator"]
+
+  Apps.policy.controllers.StatusGetController:
+    class: ../../controllers/StatusGetController
+    arguments: []
